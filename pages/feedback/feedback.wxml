@@ -1,0 +1,19 @@
+<!--pages/feedback/feedback.wxml-->
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+
+	<view class="trees" >
+	  <form bindsubmit="formSubmit" bindreset="formReset">
+
+			<view style="margin-left: 8%;margin-top:5%" >
+				<text style="font-size:30rpx;margin-top: 3%;" class=""> 您的建议 </text>
+			</view>
+			<view class="cell">
+				<textarea maxlength="-1" maxlength="{{max}}" placeholder-class="place-holder" style="padding:4% 0% 0% 6%;margin:18px 7.5%;width: 100%;height: 210rpx;border-radius: 9px;background-color: WhiteSmoke;" 
+					name="texts" placeholder="请输入您的建议，最多200字" > 
+				</textarea>
+			</view>	
+				
+			
+		<button formType="submit"  style="position: fixed;bottom:5%; left:8%;right:8%;color:#fff;border-radius: 25px;background: linear-gradient(to right, rgba(255,143,38,17), rgba(255,128,0,17));">提交</button>
+	 </form>
+	</view>

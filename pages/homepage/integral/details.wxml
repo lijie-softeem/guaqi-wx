@@ -1,0 +1,23 @@
+<!--pages/homepage/integral/details.wxml-->
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+
+<view wx:if="{{type != 1}}">
+	<view class="img_a" wx:for="{{type}}"   wx:for-item="value">
+			<view class="img_b">
+				<image  src='img/qiu.png'   style="width:138rpx;height:138rpx"></image>
+			</view>
+			
+			<view class="img_c">
+				<view class="c_c">{{value.prize}}</view>
+				<view class="c_d">兑换时间：{{value.created_time}}</view>
+			</view>
+			
+			<view class="img_d">
+			   已兑换<!-- {{value.type}} -->
+			</view>
+	</view>
+</view>
+<view wx:else>
+	<view><image src="img/soul.png" style="width: 306rpx;height: 190rpx; margin: 60rpx auto 20rpx; display:block;"></image></view>
+	<view class="sol"  style="width:100%; text-align:center">暂无兑换</view>
+</view>

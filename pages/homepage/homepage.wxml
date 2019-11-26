@@ -1,0 +1,110 @@
+<!--pages/own/own.wxml-->
+<wxs src="./tent.wxs" module="intercepts" />
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+
+		<view style="background-image:url('https://api.guaqi.vip/home/Common/images/hpng.png');background-size:100%;background-repeat:no-repeat;width:100%;">
+		<view wx:if="{{ sty == 2 }}">
+			<view wx:if="{{ flag == 1 }}"style="float:right;color:#fff;font-size: 28rpx;margin-right: 4%;margin-top: 3%;" >
+				<view catchtap="studentss"  data-sttu="{{flag}}" >+切换学员</view> 
+			</view> 
+			<view wx:else style="float:right;color:#fff;font-size: 28rpx;margin-right: 4%;margin-top: 1%;" >
+				<view catchtap="hidd"  data-sttu="{{flag}}" >-切换学员</view> 
+			</view>
+		</view>
+		<view wx:if="{{ flag == 2 }}"  class="nin" >
+			<view style="background-color:rgba(0,0,0,0.4);width:1000rpx;height:1200rpx;position: absolute;"  catchtap="hidd"  data-sttu="{{flag}}">
+			<view class="qie_h">
+			  <view class="www"></view>
+				<view  class="xian" wx:for="{{wells}}" wx:for-index="idx" wx:for-item="value" style="font-size: 25rpx;padding-top: 5%;border-radius: 10rpx;background-color:{{ value.id == student_id ? dian:''}};"  bindtouchend="handleTouchEnd" bindtouchstart="handleTouchStart"  catchtap="switchs" data-id="{{value.id}}" >
+
+					<view style="margin-left: 7%;display:flex;" >
+						  <view> <image  src='https://api.guaqi.vip/home/Common/images/xingming.png'  style="width:42rpx;height:38rpx;"></image></view>
+						  <view style="margin-left:5%">{{value.student_name}}</view>
+					</view>
+					<view style="margin-left: 7%;margin-top:1%;display:flex">
+							<view> <image  src='https://api.guaqi.vip/home/Common/images/banji.png'  style="width:42rpx;height:38rpx;"></image></view>
+						   <view style="margin-left:5%;font-size: 21rpx;">{{value.grades_name}}</view>
+					</view>
+	            
+						<view  class="{{ idx+1 == aee ? '':'divLine3'}}"  >
+						</view>
+				
+				</view> 
+			</view>
+			</view> 
+		</view> 
+			<view style="margin-bottom: 15%;font-size: 30rpx;margin-right: 5%;" >
+				<view style="display:flex;">
+					 <view style="margin: 10% 5% 0% 10%;">
+						<image  src='{{userInfo.avatarUrl}}'  style="width:139rpx;height:139rpx;border-radius:100rpx"></image>
+					 </view>
+					 <view style="margin:8% 1% 0px 0px">
+						 <view style="font-size:38rpx;color: #fff;width: 130%;margin-top:2%">{{datalist.student_name}} <text style="margin-left: 10%;background-color: #FFBE00;border-radius: 13rpx;padding: 1% 5%;font-size:28rpx"> 积分：{{datalist.point}}</text></view>
+						 <view style="color: #fff;margin-top:2%;font-size: 24rpx;width: 120%;">班级: {{datalist.grades_name ? datalist.grades_name:'暂未分班'}}</view>
+						 <view style="font-size:30rpx;color: #fff;margin-top:2%">剩余{{datalist.written_time}}课时</view>
+					 </view>
+				</view>
+			</view>
+				
+				
+				<view class="diy-navBar" style="box-shadow: 0px 0px 10px -3px #898989;border-radius: 25rpx;height: 790rpx;margin:0 auto;width:89%">
+				  
+				    <view style="width:100%;margin:0 auto">
+						<view class="item-nav" style="margin-left: 9%;">
+						  <view class="" catchtap="Record"  data-student_id="{{student_id}}">
+							<view class="item-image">
+							  <image mode="" src="https://api.guaqi.vip/home/Common/images/11.png" id="image_a"  ></image>
+							</view>
+							<view class="item-text f-28 f-29 onelist-hidden" >消课记录</view>
+						  </view>
+						</view>
+						<view class="item-nav">
+						  <view class="" catchtap="Classcard" data-student_id="{{student_id}}">
+							<view class="item-image">
+							  <image mode="" src="https://api.guaqi.vip/home/Common/images/22.png" id="image_a"  ></image>
+							</view>
+							<view class="item-text f-28 f-29 onelist-hidden" >课程表单</view>
+						  </view>
+						</view>
+						<view class="item-nav">
+						  <view class="" catchtap="curriculum" data-student_id="{{student_id}}">
+							<view class="item-image">
+							  <image mode="" src="https://api.guaqi.vip/home/Common/images/33.png" id="image_a"  ></image>
+							</view>
+							<view class="item-text f-28 f-29 onelist-hidden" >报名课程</view>
+						  </view>
+						</view>
+						
+						<view class="item-nav" style="margin-left: 9%;">
+						  <view  catchtap="appointment" >
+							<view class="item-image" >
+							  <image mode="" src="https://api.guaqi.vip/home/Common/images/44.png" id="image_a"></image>
+							</view>
+							<view class="item-text f-28 f-29 onelist-hidden" >课程预约</view>
+						  </view>
+						</view>
+						<view class="item-nav">
+						  <view class="" catchtap="Recommend" data-student_id="{{student_id}}">
+							<view class="item-image" >
+							  <image mode="" src="https://api.guaqi.vip/home/Common/images/55.png" id="image_a"></image>
+							</view>
+							<view class="item-text f-28 f-29 onelist-hidden" >推荐奖励</view>
+						  </view>
+						</view>
+						<view class="item-nav">
+						  <view  catchtap="integral" data-student_id="{{student_id}}">
+							<view class="item-image" >
+							  <image mode="" src="https://api.guaqi.vip/home/Common/images/66.png" id="image_a"></image>
+							</view>
+							<view class="item-text f-28 f-29 onelist-hidden ">我的积分</view>
+						  </view>
+						</view>
+					  </view>
+			
+				</view>
+			
+		 </view>
+		
+	 
+
+

@@ -1,0 +1,86 @@
+/* pages/appointment/appointment.wxss */
+.section { 
+	border:1px solid #FFA92C;
+	border-radius: 10px;
+	margin: 5% 9%;
+	display: flex;
+	height: 56rpx;
+	line-height: 56rpx;
+	color: #919191;
+	font-size: 30rpx;
+	padding:13rpx 0px;
+}
+.section1{
+	border:1px solid #FFA92C;
+	border-radius: 10px;
+	margin:0px 15px;
+	display: flex;
+	height: 56rpx;
+	line-height: 56rpx;
+	color: #919191;
+	font-size: 30rpx;
+  padding:13rpx 0px;
+}
+.search input{ 
+	 font-size: 30rpx;
+}
+.bg-fff{
+
+}
+
+.section view{
+  padding:0 29rpx;
+}
+.section__title::after{
+  content: "";
+  width:2rpx;
+  height: 25rpx;
+  background: #000000;
+  position: absolute;
+  margin-top:18rpx;
+  margin-left:15rpx;
+  font-size: 30rpx;
+  font-weight:bold
+}
+.avatar image{
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50px;
+	margin:50rpx 200rpx 20rpx 260rpx;
+
+}
+.tab {
+  color: #000000;
+  font-weight:bold;
+
+
+}
+.section image{
+	background-color:#FFA92C;
+	width:24rpx;
+	height:24rpx;
+	border-radius:25px;
+	
+
+}
+.button{
+  margin:41rpx 48rpx 0 48rpx;
+   border-radius: 25px;
+   color:#fff
+ 
+  
+}
+.contact{
+  margin-left:30rpx;
+  margin-right:30rpx;
+  font-size: 19rpx;
+  color:#919191;
+}
+.ssd{
+ font-size: 30rpx;
+}
+.search-input {
+  height: 60rpx;
+  margin-left:27px;
+
+}

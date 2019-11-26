@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/login/login",
+	"pages/number/number",
+    "pages/index/index",
+    "pages/new/new",
+    "pages/logs/logs",
+    "pages/appointment/appointment",
+  	"pages/curriculum/curriculum",
+    "pages/curriculum/details",
+    "pages/onal/onal",
+    "pages/campus/campus",
+    "pages/works/works",
+	"pages/collection/collection",
+	"pages/notice/notice",
+	"pages/feedback/feedback",
+    "pages/homepage/homepage",
+    "pages/homepage/Classcard/Classcard",
+    "pages/homepage/Recommend/Recommend",
+    "pages/homepage/Record/Record",
+    "pages/homepage/integral/integral",
+	"pages/homepage/integral/details",
+    "pages/homepage/curriculum/curriculum"
+	
+	
+	
+	
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  
+  "tabBar":{
+     "color":"#6d6b6c",
+    "selectedColor": "#000",
+    "borderStyle": "white", 
+    
+	  "list":[{
+	   "pagePath":"pages/index/index",
+	  "text":"首页",
+	  "iconPath": "images/48.png",
+	  "selectedIconPath":"images/41.png"
+	  },
+	  {
+		"pagePath": "pages/collection/collection",
+		"text": "收藏",
+		"iconPath": "images/42.png",
+		"selectedIconPath": "images/45.png"
+	  },
+	  {
+		"pagePath": "pages/onal/onal",
+		"text": "我的",
+		"iconPath": "images/43.png",
+		"selectedIconPath": "images/47.png"
+	  }
+	  ]
+  },
+   "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+
+	  
+}

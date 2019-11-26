@@ -1,0 +1,9 @@
+
+{
+
+  "usingComponents": {
+    "component-topnav": "/pages/component/topnav"
+	
+  }
+ 
+}

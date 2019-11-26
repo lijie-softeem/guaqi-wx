@@ -1,0 +1,164 @@
+<wxs src="./center.wxs" module="intercept" />
+	<wxs src="./tent.wxs" module="intercepts" />
+	  <component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}"></component-topnav>
+	 
+
+		<view class="urla" style="min-height:100%;background-image:url('https://api.guaqi.vip/home/Common/images/123.png');background-size:100% 100%;padding-top:8%;">
+			<view class="padd" style="">
+			   <swiper class='u-wrp-bnr'  indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' >
+				  <block wx:for="{{bnrUrl}}" wx:for-index="index">
+					<swiper-item>
+					  <image src='{{item.url}}' class='u-img-slide' style="width:100%;border-radius: 4%;" ></image>
+					  <button class="u-img-but" style="background-color: {{item.back}};"  catchtap="appointment" > {{item.title}} </button>
+					</swiper-item>
+				  </block>
+				
+				</swiper> 
+				
+				<view class="diy-navBar" >
+				  <view class="data-list" >
+					<view class="item-nav">
+					  <view class="" catchtap="navigationTodeta" >
+						<view class="item-image">
+						  <image mode="" src="img/a.png" id="image_a"  ></image>
+						</view>
+						<view class="item-text f-28 f-29 onelist-hidden" >课程信息</view>
+					  </view>
+					</view>
+					
+					<view class="item-nav">
+					  <view  catchtap="navigationTo">
+						<view class="item-image" >
+						  <image mode="" src="img/bb.png" id="image_b"></image>
+						</view>
+						<view class="item-text f-28 f-29 onelist-hidden" >在线预约</view>
+					  </view>
+					</view>
+					<view class="item-nav">
+					  <view class="" catchtap="navigationTohome">
+						<view class="item-image" >
+						  <image mode="" src="img/c.png" id="image_c"></image>
+						</view>
+						<view class="item-text f-28 f-29 onelist-hidden" >优秀作品</view>
+					  </view>
+					</view>
+					<view class="item-nav">
+					  <view  catchtap="navigationTodh" >
+						<view class="item-image" >
+						  <image mode="" src="img/d.png" id="image_d"></image>
+						</view>
+						<view class="item-text f-28 f-29 onelist-hidden ">校区展示</view>
+					  </view>
+					</view>
+				  </view>
+				</view>
+			</view>
+		</view>
+	 <view class="divLine3"></view> 
+
+		<view  class="tuii" >
+		   <view>
+				<image  src="img/xian.png"></image>
+		   </view >
+		   <view class="item2 f-29" style="width:67%" >推荐课程</view>
+			<a catchtap="navigationTodeta"  id="look" >查看更多
+				<image mode="" src="img/dayu.png"  id="img_a" style=""> </image>
+			</a> 
+		  
+		</view>
+		<view class="main">	
+			<view class="diy-culum">
+				
+				<view class="data-well" wx:for="{{course}}"   wx:for-index='key' wx:for-item='value'>
+				
+					<view class="kc" >
+						<view class="imm" style="">
+							<image   id="img_b" ></image>
+						</view>	
+						<view class="imms" >
+							<image  src="{{value.course_img}}" id="img_c" ></image>
+						</view>			
+					</view>
+				
+					<view class="nr" >
+						  <view class="sy" >适于{{value.age_group}}岁</view>
+						  <view class="f-29 van_icon"  style="font-size:32rpx"> 
+							{{value.course_name}}
+						  </view>
+						  <view class="con" >
+							<text>{{value.course_des}}</text>
+						  </view>
+						  <view>
+							 <view  class="buut" >	
+								<view style="width:45%;">
+									<text style="color:red;font-size:22rpx;">{{value.count}}</text> <text style="color:#949494;font-size:18rpx;">人已学习</text>
+								</view>
+								
+								     <view wx:if="{{ value.collection == 1}}">
+										<image  catchtap="collection" data-id="{{value.id}}" id="{{key}}" data-collection="2" src="img/xinh.png" style="width:28rpx;height:28rpx;display:block; position: absolute; margin-top:-3%;"></image>
+									 </view>
+									<view wx:elif="{{ value.collection == 2}}">
+										<image  catchtap="collection" data-id="{{value.id}}" id="{{key}}" data-collection="1" src="img/x.png" style="width:28rpx;height:28rpx;display:block; position: absolute; margin-top:-3%;"></image>
+									</view>
+								
+								 <!-- <view>
+									<image  catchtap="collection" data-id="{{value.id}}" id="{{key}}"  data-collection="{{value.collection == 1 ? '2':'1'}}" src="{{value.collection == 1 ? 'img/xinh.png':'img/x.png'}}" style="width:28rpx;height:28rpx; display:block; margin-left: 100%;"></image>
+								 </view> -->
+						
+								<view class="te f-29"> 
+										<a catchtap="detali" data-id="{{value.id}}"> <text  style="width:100%">查看详情</text></a>
+								</view>
+							 </view>
+						  </view>
+						 
+					</view>
+				</view>		
+			</view>
+		</view>	
+			<view  class="heng" >
+				<image  src="img/heng.png" ></image>
+			</view> 
+			<view class="xin">
+			<view class="item1 f-29 wee">新闻列表</view>
+				<image  src="img/xin.png" ></image>
+			</view>  
+		<view class="headLine"  catchtap="navigationTonew"  >
+				<view   wx:for="{{datas}}" wx:for-index="key"  wx:for-item="value"  bindtap="jumpDetails" data-Id="{{value.id}}" >
+						<view class="headLineWra " >
+							<view class="arrowsBox">
+								<image src="{{value.img_src}}"></image>
+							</view>
+							<view class="headLineContent" >
+								<view class="headLineTitle f-29" >
+								  {{intercepts.substr(value.title)}}
+								</view>
+								<view class="head" >
+									<view class="headLineTitledeta">
+									  {{intercept.substr(value.content)}}
+									</view>
+									<view class="headLineInfor" >
+									  <view class="" style="color:#8B8B83">
+										{{value.created_time}}
+										
+									  </view>
+									</view>
+								</view>	
+							</view>
+						</view>
+						<image  src="img/xi.png"  id="img_d" ></image>
+				</view>
+					
+				
+			<view class="moreButton" bindtap="onReachBottom"  data-page="{{page}}">
+				<text  hidden="{{hidden}}">上拉加载更多↑</text>
+				<text  hidden="{{show}}">已经到底...</text>
+			</view>
+		</view>
+		<!-- 悬浮图标 -->
+		<!-- <view bindtap='adddetial'>
+		  <image class="add_icon" src="img/789987.png"></image>
+		 </view>-->
+		 
+		   <import src="../component/tabbar.wxml"/> 
+	
+			<template is="tabBar" data="{{tabBar}}"/>

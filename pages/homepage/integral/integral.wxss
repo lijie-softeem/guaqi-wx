@@ -1,0 +1,42 @@
+/* pages/homepage/integral/integral.wxss */
+
+.fen{
+	padding-top: 42%;
+	padding-left: 10%;
+    font-size:30rpx;
+}
+.dui{
+	
+	background-size: 100% 100%;
+	width: 624rpx;
+	height: 178rpx;
+	margin-top: 4%;
+	margin-left: 8.5%;
+    display:flex;
+	
+}
+.dui_h{
+	margin-top: 7%;
+	margin-left: 63%;
+	background-size: 100% 100%;
+	width: 17%;
+	height: 11%;
+	line-height: 68rpx;
+	position: absolute;
+
+
+}
+.dui_v{
+	font-size: 30rpx;
+	color: #fff;
+	margin-left: 25%
+
+}
+.dui_r{
+    position: absolute;
+	margin-left: 70%;
+	margin-top: 42%;
+	font-size: 28rpx;
+	color: SaddleBrown;
+
+}

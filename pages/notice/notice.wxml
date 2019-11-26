@@ -1,0 +1,48 @@
+<!--pages/notice/notice.wxml-->
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+
+		<view>
+			<view class="main">
+				<text style="font-size:22rpx;color:#848484"> 今天  15:40 </text>
+			</view>
+			<view class="" style="display:flex;margin-top:5%;justify-content: center;">
+				<view> <image style="width:77rpx;height:77rpx;"  src="img/159.png"></image></view>
+				<view style="margin-left: 19.5px;margin-top: -3px;">
+					<view style="font-size:30rpx;">通知消息</view>
+					<view style="margin-top: 15rpx;font-size:22rpx;color:#848484"> 恭喜您成功购买Scratch上（1年）课程！</view>
+				</view>
+			</view>
+			<view style="margin-top: 2%;display:flex;justify-content: center;">
+				<image style="margin: 3% 15% 0% 15%;height: 4px;"  src="img/368.png"></image>
+			</view>
+		</view>
+		<view class="" style="margin:0 auto">
+			<view class="main">
+				<text style="font-size:22rpx;color:#848484"> 今天  15:40 </text>
+			</view>
+			<view class="" style="display:flex;margin-top:5%;justify-content: center;">
+				<view> <image style="width:77rpx;height:77rpx;"  src="img/159.png"></image></view>
+				<view style="margin-left: 19.5px;margin-top: -3px;">
+					<view style="font-size:30rpx;">通知消息</view>
+					<view style="margin-top: 15rpx;font-size:22rpx;color:#848484"> 恭喜您成功购买Scratch上（1年）课程！</view>
+				</view>
+			</view>
+			<view style="margin-top: 2%;display:flex;justify-content: center;">
+					<image style="margin: 3% 15% 0% 15%;height: 4px;"  src="img/368.png"></image>
+			</view>
+		</view>
+		<view class="" style="margin:0 auto">
+			<view class="main">
+				<text style="font-size:22rpx;color:#848484"> 今天  15:40 </text>
+			</view>
+			<view class="" style="display:flex;margin-top:5%;justify-content: center;">
+				<view> <image style="width:77rpx;height:77rpx;"  src="img/159.png"></image></view>
+				<view style="margin-left: 19.5px;margin-top: -3px;">
+					<view style="font-size:30rpx;">通知消息</view>
+					<view style="margin-top: 15rpx;font-size:22rpx;color:#848484"> 恭喜您成功购买Scratch上（1年）课程！</view>
+				</view>
+			</view>
+			<view style="margin-top: 2%;display:flex;justify-content: center;">
+					<image style="margin: 3% 15% 0% 15%;height: 4px;"  src="img/368.png"></image>
+			</view>
+		</view>

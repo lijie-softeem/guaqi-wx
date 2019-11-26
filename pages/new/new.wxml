@@ -1,0 +1,11 @@
+<!--pages/new/new.wxml-->
+
+   <component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+		<view  class="titles" >
+			<view class="title" >{{datas.title}}</view>
+			<view class="time">日期：{{datas.created_time}}</view>
+			<rich-text style="font-size: 30rpx;" nodes="{{datas.content}}" >
+			</rich-text>
+	
+		</view>
+	

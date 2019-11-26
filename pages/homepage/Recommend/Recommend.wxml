@@ -1,0 +1,81 @@
+<!--pages/homepage/Recommend.wxml-->
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+
+ <view style="background-image:url('https://api.guaqi.vip/home/Common/images/tui_bj.png');background-size:100% 100%;height:100%">
+ 
+         
+	 <view class="bjc" >
+	     <view>
+			<image src="img/qiu.png"  id="img_a"></image>
+		 </view>
+		 <view>
+			<image src="https://api.guaqi.vip/home/Common/images/kuang.png"  id="img_b"></image>
+		 </view>
+		
+		  <view>
+			<image src="img/mao.png" id="img_c"></image>
+		 </view>
+		
+		  <view>
+			<image src="img/font.png" id="img_e"></image>
+		 </view>
+	 </view>  
+	<view>
+		<image src="https://api.guaqi.vip/home/Common/images/tiao.png"  id="img_f"></image>
+	 </view>
+	  <view bindtap="show">
+			<image src="img/tui.png"  id="img_d" ></image>
+	  </view>
+	  <view class="notice">
+         点击“立即推荐”按钮，填写您推荐的电话，姓名，一旦您推荐的学员在我校区报名，我们将有丰富的礼品
+	  </view>
+	 <scroll-view scroll-y="true" style="height: 3700rpx;"  class="modal-box" hidden="{{flag}}" >
+			<view class="modal-content" >
+						<image  src='img/eet.png'  id="img_aa" style="position:absolute;width: 100%;width: 78%;height: 2.3% "></image>
+				<form bindsubmit="formSubmit" bindreset="formReset">
+					
+				  <view style="padding-top:7%;">
+						<view class='section'>
+						  <view class="section__title tab">姓名</view>
+							<input  type='text' name="username" placeholder='' placeholder-class='search-placeholder' ></input>
+						</view>
+						
+						<view class="section"  >
+						  <view class="section__title tab" >性别</view>
+						  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+							<view class="picker" style="display:flex;position:relative">
+								 <view>{{array2[index2]}}</view>
+								<view style="position: absolute; width: 278rpx;"> <image src="img/xia.png" style="margin-left: 108%;" id="img_xia"></image></view>
+							</view>
+						  </picker>
+						</view>
+						
+						<view class="section">
+							  <view class="section__title tab">年龄</view>
+							  <input  type="number" name="age" value='{{age}}' class="search-input" placeholder-class="ssd" placeholder="" />
+						</view>
+						
+						<view class="section">
+						  <view class="section__title tab">电话</view>
+						  <input  type="number" name="number" value='{{number}}' class="search-input" placeholder-class="ssd" placeholder="" />
+						</view>
+					 
+						<view class="section">
+						  <view class="section__title tab">校区</view>
+						  <picker bindchange="bindPickerChange1" value="{{store_names[index1].short_store_name}}"  range="{{store_names}}"  range-key="{{'short_store_name'}}">
+							<view class="picker" style="display:flex;width: 300rpx;">
+							   <view style="font-size:24rpx"> {{store_names[index1].short_store_name}} </view>
+								<view style="position: absolute;width: 278rpx;"> <image src="img/xia.png" style="margin-left: 100%;" id="img_xia"></image></view>
+							</view>
+						  </picker>
+						</view>
+						  <button formType="submit" class="button" style="background-color:#FFA92C;font-size:38rpx" > 预约 </button>
+				  </view>
+				</form>			
+				
+			</view>
+			<view  bindtap="hide" style="z-index:9999999">
+				<image  src='img/XX.png'  style="width:72rpx;height:72rpx;margin: 7% 45%;"  ></image>
+			</view>
+		</scroll-view>
+ </view>

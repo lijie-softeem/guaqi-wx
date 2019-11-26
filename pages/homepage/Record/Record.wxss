@@ -1,0 +1,76 @@
+/* pages/homepage/Record/Record.wxss */
+
+.one_bf{
+	margin-top: 8%;
+	width: 672rpx;
+
+	border-radius: 26rpx;
+	margin-left: 5%;
+	height:100%;
+box-shadow: -1px 10px 25px -10px #898989;
+border-radius: 26rpx;
+
+}
+
+.one_mg{
+
+	display:flex
+}
+.one_mg .one_mg_a{
+	margin:5% 5%;
+	width: 17%;
+}
+.one_mg  .one_mg_b{
+	margin-top: -25%;
+	margin-left: 30%;
+	width: 60%;
+}
+ .one_mg .one_mg_b .one_mg_data{
+	 position: absolute;
+	 font-size: 24rpx;
+	 color: #848484;
+	 margin-left: 40%;
+	 margin-top: -5%;
+ }
+ .ming{
+	    font-size: 28rpx;
+		width: 84%;
+		color:#6d6d6d;
+		background-color: #eeeeee;
+		border-radius: 13rpx;
+		margin-left: 5%;
+		margin-top: 3%;
+		padding: 1% 3%;
+        margin-bottom:9%;
+ }
+ .ka{
+	float: right;
+	width: 10%;
+	margin-top: -7%;
+	margin-right: 5%;
+	text-align:right;
+	color: #6d6d6d;
+    font-size:22rpx;
+	height:100%
+ }
+.modal-box{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:transparent;
+ 
+  }
+ 
+.modal-body{
+  position:relative;
+  }
+.modal-content{
+	overflow: hidden;
+	border-radius: 10rpx;
+	background-color: #fff;
+	margin-top: 35%;
+	margin-left: 8%;
+	width: 84%;
+	height: 21%;
+}

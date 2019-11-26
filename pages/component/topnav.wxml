@@ -1,0 +1,14 @@
+<view class='nav' style='height: {{status + navHeight}}px;position:fixed;width: 100%;background-color: {{isShowBackcolor}};top: 0; z-index: 9999;'>
+
+	<view class='status' style="height: {{status}}px;{{containerStyle}};width:106%;background-color='{{isShowBackcolor}}' "></view> 
+		<view class='navbar' style="height:{{navHeight}}px;{{containerStyle}};width:100%;background-color='{{isShowBackcolor}}'; text-align:center; line-height:{{navHeight}}px;">
+			<view class='iconfont icon-fanhui2 {{titleClass}}' style="position: absolute;height:{{navHeight}}px; padding:0 5% 0 3%;"	wx:if="{{backIcon}}" bindtap='back'>
+			</view>
+			<view class='nav-title' wx:if="{{titleText && !titleImg}}">
+				<text style='{{textStyle}};'>{{titleText}}</text>
+			</view>
+
+		</view>
+
+</view>
+<view class='nav_liu' style='height: {{status + navHeight}}px;width: 100%;background-color: {{isShowBackcolor}};'></view>

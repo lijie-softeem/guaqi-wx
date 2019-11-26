@@ -1,0 +1,88 @@
+<!--pages/curriculum/details.wxml-->
+   <component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>
+	<view class="uelss" style="background-image:url('https://api.guaqi.vip/home/Common/images/xq_bj.png');  background-size: cover; background-size: contain;">
+			<view  class="years" style="">{{datas.course_name}}({{datas.years}}年)</view>
+			<view style="text-align:center;font-size:12px;color:#fff;font-size:22rpx">{{count}}人已学习</view>
+			<view class="conter tieles" style="margin:162px 30.5px 20px 30.5px">
+				<view class="sy" style="float:right;">适于{{datas.age_group}}岁\n</view>
+				<view class="bu" style="margin-left: 2%;">
+				<view style="font-size:34rpx;margin-top: -2%;">课程简介</view>
+				<view style="font-size:24rpx;margin-top: 3%;color:#939393;line-height:40rpx;">{{datas.course_des}}</view>
+				</view>
+			</view>	
+			<view class="conter tieles" style="margin:28px 30.5px 20px 30.5px">
+				<view class="bu" style="margin-left: 2%;">
+					<view style="font-size:34rpx;margin-top:-1%;">课程简介</view>
+					<view style="font-size:24rpx;margin-top: 3%;color:#939393;line-height:40rpx;">{{datas.course_content}}</view>
+					<!--<view style="font-size:24rpx;margin-top: 5%;color:#939393">机器人是未来辅助我们生活和工作的帮手电机、红外传感器、超声波传感器等多个硬件，完成各种智能机器人的搭建和控制。</view>-->
+				</view>
+			</view>
+			<view style="height:140rpx">
+			</view>
+			  <scroll-view scroll-y="true" style="height: 3700rpx;"  class="modal-box" hidden="{{flag}}" >
+					<view class="modal-content" >
+								<image  src='img/eet.png'  id="img_a" style="position:absolute;width: 100%;width: 78%;height: 2.3% "></image>
+						<form bindsubmit="formSubmit" bindreset="formReset">
+							
+						  <view style="padding-top:7%;">
+					
+							<view class="section">
+								  <view class="section__title tab">姓名</view>
+								  <input  type="text" name="username"  class="search-input" placeholder-class="ssd" placeholder="" />
+							</view>
+							
+							<view class="section"  >
+							  <view class="section__title tab" >性别</view>
+							  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+								<view class="picker " style="display:flex;position:relative">
+									 <view>{{array2[index2]}}</view>
+									<view style="position: absolute;width: 278rpx;"> 
+										<image src="img/xia.png" style="margin-left: 115%;"></image>
+									</view>
+								</view>
+							  </picker>
+							</view>
+							
+							<view class="section">
+								  <view class="section__title tab">年龄</view>
+								  <input  type="number" name="age" value='{{age}}' class="search-input" placeholder-class="ssd" placeholder="" />
+							</view>
+							
+							<view class="section">
+							  <view class="section__title tab">电话</view>
+							  <input  type="number" name="number" value='{{number}}' class="search-input" placeholder-class="ssd" placeholder="" />
+							</view>
+						 
+							<view class="section">
+							  <view class="section__title tab">校区</view>
+							  <picker bindchange="bindPickerChange1" value="{{store_names[index1].short_store_name}}"  range="{{store_names}}"  range-key="{{'short_store_name'}}">
+								<view class="picker" style="display:flex">
+								   <view style="font-size:24rpx"> {{store_names[index1].short_store_name}} </view>
+									<view style="position: absolute;width: 278rpx;"><image src="img/xia.png" style=" margin-left: 115%;"></image></view>
+								</view>
+							  </picker>
+							</view>
+							  <button formType="submit" class="button" style="background-color:#FFA92C;font-size:38rpx" > 预约 </button>
+							 
+						  </view>
+						</form>			
+						
+					</view>
+					<view  bindtap="hide" style="z-index:9999999">
+						<image  src='img/XX.png'  style="width:72rpx;height:72rpx;margin: 7% 45%;"  ></image>
+					</view>
+			</scroll-view>
+			
+		</view>
+		<!--底部导航 -->
+		<view class='footer'  data-id="{{datas.id}}" style="height: 100rpx;">
+			 <view class='footer_list' data-id='{{index}}' catchtap='Navigation' wx:for="{{listInfo}}" data-current="{{index}}" wx:key="this" bindtap="chooseImg">
+		
+			 </view>
+			
+			 <view class="lafa" style="font-size:32rpx;" bindtap="show">立即预约</view>
+		</view>
+		<!--底部导航 -->
+	
+
+

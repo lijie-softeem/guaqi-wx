@@ -1,0 +1,100 @@
+/* pages/campus/campus.wxss */
+
+.u-img-slide{
+  width:100%;
+  height:336rpx;
+}
+.text{ 
+	
+	 text-indent:56rpx;
+	 margin-top: 10px;
+
+}
+.text p{
+	  text-indent: 60rpx; 
+	  font-size:24rpx
+	  
+	}
+.divLine1{
+	background:#FA9956;
+	width:56%;
+	height:6rpx;
+	margin:20rpx 150rpx;
+   border-radius:20px;
+
+ 
+}
+
+.fuu{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.fuu-a{
+	margin: -8% 0;
+	height: 100%;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px 2px #EBEBEB;
+	width: 84%;
+
+}
+.fuu-a .fuu-b{
+	padding: 7% 8%;
+	height: 100%
+
+}
+.map-a{
+	display:flex;
+	align-items: center; 
+	justify-content: center;
+    margin: 4% 0 0 0;
+}
+
+.add_icon{
+
+	position: fixed;
+    width: 20rpx;
+    height: 300rpx;
+    bottom: 68%;
+    right: 0%;
+
+}
+
+.arrow{
+
+width:30rpx;
+
+height:46rpx;
+
+}
+
+.prev{
+padding: 25px 10px 25px 10px;
+position:absolute;
+
+left:0;
+
+top:20%;
+
+transform:translate(0,-50%);
+
+cursor:pointer;
+    background: #000000;
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
+.next{
+padding: 25px 10px 25px 10px;
+position:absolute;
+
+right:0;
+
+top:20%;
+
+transform:translate(0,-50%);
+    background: #000000;
+    opacity: 0.5;
+    border-radius: 5px;
+}

@@ -1,0 +1,59 @@
+
+   <component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>
+	<view class="bg-fff" style="min-height:100%;background-image:url('https://api.guaqi.vip/home/Common/images/zai-8.png');background-size:100% 100%;">
+ 
+		<form bindsubmit="formSubmit" bindreset="formReset">
+		  <view style="padding-top:30%">
+			<view class="section"  >
+			  <view class="section__title  tab" >课程</view>
+			  <picker bindchange="bindPickerChange"  value="{{course_names[index].course_name}}"  range="{{course_names}}"  range-key="{{'course_name'}}">
+				<view class="picker" style="display:flex">
+				 <view> {{course_names[index].course_name}}</view>
+				 <view style="position: absolute;"><image src="img/xia.png" style=" margin-left:404rpx;"></image></view>
+				</view>
+			  </picker>
+			</view>
+			<view class='section'>
+			  <view class="section__title tab">姓名</view>
+				<input class='search-input' type='text' name="username" placeholder='' placeholder-class='search-placeholder' ></input>
+			</view>
+			
+			<view class="section"  >
+			  <view class="section__title tab" >性别</view>
+			  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+				<view class="picker " style="display:flex">
+					 <view>{{array2[index2]}}</view>
+					<view style="position: absolute;"> <image src="img/xia.png" style="margin-left:404rpx;"></image></view>
+				</view>
+			  </picker>
+			</view>
+			
+			<view class="section">
+				  <view class="section__title tab">年龄</view>
+				  <input  type="number" name="age" value='{{age}}' class="search-input" placeholder-class="ssd" placeholder="" />
+			</view>
+			
+			<view class="section">
+			  <view class="section__title tab">电话</view>
+			  <input  type="number" name="number" value='{{number}}' class="search-input" placeholder-class="ssd" placeholder="" />
+			</view>
+		 
+			<view class="section">
+			  <view class="section__title tab">校区</view>
+			  <picker bindchange="bindPickerChange1" value="{{store_names[index1].short_store_name}}"  range="{{store_names}}"  range-key="{{'short_store_name'}}">
+				<view class="picker" style="display:flex">
+				   <view style="font-size:24rpx"> {{store_names[index1].short_store_name}} </view>
+					<view style="position: absolute;"><image src="img/xia.png" style=" margin-left:404rpx;"></image></view>
+				</view>
+			  </picker>
+			</view>
+			  <button formType="submit" class="button" style="background-color:#FFA92C;font-size:38rpx" > 预约 </button>
+			  <view style="font-size:18rpx;margin-left: 17px;margin-top: 13px">
+			  <span class="contact ">留下您的联系方式和感兴趣的课程，我们将会在24小时之内与您联系介绍课程</span>
+			  </view>
+		  </view>
+		</form>
+		<view style="height:100px; margin-bottom:20px;">
+		</view>
+  </view>
+   

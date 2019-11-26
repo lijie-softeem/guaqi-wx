@@ -1,0 +1,43 @@
+<!--pages/homepage/integral/integral.wxml-->
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+
+ <view style="background-image:url('https://api.guaqi.vip/home/Common/images/bj.png');background-size:100% 100%;height:1200rpx">
+		   <view style="display:flex">
+			  <view class="fen">
+			   我的积分：{{student_integral}}
+			   </view>
+			   <view class="dui_r" bindtap="navigationTodeta" data-student_id="{{student_id}}" >
+				兑换记录
+			   </view>
+	       </view>
+	  <scroll-view scroll-y="false" style="height: 648rpx;">
+	  <view wx:for="{{integral}}"   wx:for-item="value">
+			<view  class="dui" style="background-image:url('img/zbj.png');">
+				<view style="margin-top: 5%;margin-left: 4%;">
+				   <image src="https://api.guaqi.vip/home/Common/images/qiu.png"  style="width:139rpx;height:139rpx"></image>
+				</view>
+				<view style="margin: 7% 1%;">
+						<view style="font-size:32rpx;width:252rpx">
+						{{value.prize}}   <text style="margin-left:5%;font-size: 23rpx">库存{{value.stock}}</text>
+						</view>
+						<view style="font-size: 24rpx;margin-top: 4%;color: #FF8C00;">
+						所需积分：{{value.point}}积分
+						</view>	
+				</view>
+				
+					<view wx:if="{{student_integral>=value.point && value.add!=400}}" class="dui_h" style="background-image:url('img/dui.png');"  bindtap="integral"  data-id="{{value.id}}" data-prize="{{value.prize}}" data-point="{{value.point}}" >
+						<view class="dui_v">兑换</view>
+					</view>
+					<view wx:elif="{{value.add==400 && student_integral>=value.point}}" class="dui_h" style="background-image:url('img/huan.png');" >
+						<view class="dui_v">兑换</view>
+					</view>
+					<view wx:else class="dui_h"  style="background-image:url('img/huan.png');" >
+						<view class="dui_v">兑换</view>
+					</view>
+					
+	       </view>
+		 </view>
+
+	</scroll-view>
+
+  </view>

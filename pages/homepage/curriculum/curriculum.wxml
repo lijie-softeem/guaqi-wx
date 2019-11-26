@@ -1,0 +1,97 @@
+
+<!--pages/curriculum/curriculum.wxml-->
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+
+<!--  搜索框  -->
+<view style="height:100%">
+	<view class="main" hidden="{{good}}">	
+		<view class="diy-culum">
+			
+			<view class="data-well" wx:for="{{course}}"   wx:for-item="value"  >
+			
+				<view class="kc" >
+					<view class="imm" style="">
+						<image   style="border-radius:10px;width:206rpx;height:268rpx;box-shadow: 0px 0px 10px -3px #898989;box-shadow: 0px 0px 10px -3px #898989;"></image>
+					</view>	
+					<view class="imms" >
+						<image  src="{{value.course_img}}" style="border-radius:10px;margin-left: 3%;width:194rpx;height:268rpx"></image>
+					</view>			
+				</view>
+			
+				<view class="nr" >
+					  <view class="sy" >适于{{value.age_group}}岁\n</view>
+					  <view class="f-29 van_icon"  style="font-size:32rpx"> 
+						{{value.course_name}}
+					  </view>
+					  <view class="con" >
+						<text>{{value.course_des}}</text>
+					  </view>
+					  <view>
+						 <view  class="buut" >	
+							<view> 
+								<text style="color:red;font-size:22rpx;">{{value.list}}</text> <text style="color:#949494;font-size:18rpx;">人已学习</text>
+							</view>
+							
+							<view class="te f-29"> 
+									<a catchtap="navigationTodeta" data-id="{{value.id}}"> <text  style="width:100%;color:#fff">已报名</text></a>
+							</view>
+						 </view>
+					  </view>
+					 
+				</view>
+			
+			</view>		
+		</view>	
+	</view>	
+	
+	<view class="main" hidden="{{file}}">	
+		<view class="diy-culum">
+				<!-- 搜索 -->
+				<view wx:if="{{code == 200}}">
+					<view class="data-well" wx:for="{{searchData}}"   wx:for-item="value" >
+					
+						<view class="kc" >
+							<view class="imm" style="">
+								<image   style="border-radius:10px;width:206rpx;height:268rpx;box-shadow: 0px 0px 10px -3px #898989;box-shadow: 0px 0px 10px -3px #898989;"></image>
+							</view>	
+							<view class="imms" >
+								<image  src="https://api.guaqi.vip/home/Common/images/pan.png " style="border-radius:10px;margin-left: 3%;width:194rpx;height:268rpx"></image>	
+							</view>			
+						</view>
+					
+						<view class="nr" >
+							  <view class="sy" >适于9-12岁\n</view>
+							  <view class="f-29 van_icon"  style="font-size:32rpx"> 
+								{{value.course_name}}
+							  </view>
+							  <view class="con" >
+								<text>\n用有趣的故事，让宝贝边学边玩\n自然而然的学习</text>
+							  </view>
+							  <view>
+								 <view  class="buut" >	
+									<view> 
+										<text style="color:red;font-size:22rpx;margin-left:15rpx">461</text> <text style="color:#949494;font-size:18rpx;">人已学习</text>
+									</view>
+									<view class="te f-29"> 
+											<a catchtap="navigationTodeta" data-id="{{value.id}}"> <text  style="width:100%;color:#fff">已报名</text></a>
+									</view>
+								 </view>
+							  </view>
+							 
+						</view>
+					 </view>	
+				</view>
+				<view wx:else>
+				    <view class="imgs"><image src="img/soul.png" ></image></view>
+					<view class="sol">查无此条数据</view>
+				</view>	
+			<!-- 结束 -->
+		</view>	
+	</view>	
+</view>	
+	<!-- 分割线 -->
+		<!-- <view class="divLine"></view>    -->
+
+
+
+

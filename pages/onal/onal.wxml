@@ -1,0 +1,141 @@
+<!--pages/own/own.wxml-->
+<wxs src="./tent.wxs" module="intercepts" />
+ <component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}"></component-topnav>  
+
+		<view style="background-image:url('https://api.guaqi.vip/home/Common/images/wd_bj.png');background-size:100%;background-repeat:no-repeat;width:100%;">
+		<view  class="bang" bindtap="show"  >+绑定学员</view>
+			<view style="margin-bottom: 15%;">
+				<view style="display:flex;">
+					 <view style="margin: 6% 5% 0% 10%;">
+						<image  src='{{userInfo.avatarUrl}}'  style="width:139rpx;height:139rpx;border-radius:100rpx"></image>
+					 </view>
+					 <view style="margin:9% 1% 0px 0px">
+						 <view style="font-size:28rpx">{{intercepts.substr(userInfo.nickName)}}</view>
+						 <view style="font-size:22rpx">8岁</view>
+					 </view>
+				</view>
+			</view>
+				<view  wx:if="{{unionid && student_id}}" class="ssu" style="background-image:url('https://api.guaqi.vip/home/Common/images/789789798.png');">
+						<view  class="ddi" >
+							<view class="iim">
+								<image src="https://api.guaqi.vip/home/Common/images/325.png" style="" ></image>
+							</view>
+							<view class="item2 f-29" style="font-size:32rpx">我的课程</view>
+
+						</view>
+						<view class="content"  >
+								<view class="item-nav" >
+									<view class="nav-to" catchtap="noPay" >
+										<image  class="img" src="https://api.guaqi.vip/home/Common/images/2.png"></image>
+										<view class="font" >待预约</view>
+									</view>
+								</view>
+								<view class="item-nav" style="margin:0 174rpx 0 174rpx;">
+									<view class="nav-to" catchtap="noSend"  data-course_id="{{couresmsgw}}">
+										  <image  class="img" src="https://api.guaqi.vip/home/Common/images/1.png"></image>
+										<view class="font" >已报名</view>
+									</view>
+								</view>
+								<view class="item-nav">
+									<view class="nav-to" catchtap="sended">
+										<image  class="img" src="https://api.guaqi.vip/home/Common/images/3.png"></image>
+										<view class="font" >已取消</view>
+									</view>
+								</view>
+						</view> 
+						
+					</view>
+				
+				
+				<view>
+					<view class="" style="height:78rpx;line-height:68rpx;display:flex;align-items: center;" catchtap="notice">
+						 <image  src='https://api.guaqi.vip/home/Common/images/8.png'  style="width:27rpx;height:27rpx;margin-left: 7%;"></image>
+						 <text style="font-size:30rpx;margin-left: 2%;">我的通知</text>
+					</view>
+					<view style="display:flex;align-items: center;">
+						<image  class="img" src="https://api.guaqi.vip/home/Common/images/368.png" style="width:88%;height:5px;margin:5px 24px;"></image>
+					</view>
+					
+				
+					
+					<view class="" style="height:78rpx;line-height:68rpx;display:flex;align-items: center;"  catchtap="feedback">
+						 <image  src='https://api.guaqi.vip/home/Common/images/7.png'  style="width:27rpx;height:27rpx;margin-left:7%;"></image>
+						 <text style="font-size:30rpx;margin-left: 2%;">用户反馈</text>
+					</view>
+					<view style="display:flex;align-items: center;">
+						<image  class="img" src="https://api.guaqi.vip/home/Common/images/368.png" style="width:88%;height:5px;margin:5px 24px;"></image>
+					</view>
+					
+					<view wx:if="{{unionid && student_id}}" class="" style="height:78rpx;line-height:68rpx;display:flex;align-items: center;"  catchtap="feedbacks" >
+						 <image  src='https://api.guaqi.vip/home/Common/images/7.png'  style="width:27rpx;height:27rpx;margin-left:7%;"></image>
+						 <text style="font-size:30rpx;margin-left: 2%;">家长中心</text>
+					</view> 
+					<view wx:if="{{unionid && student_id}}" style="display:flex;align-items: center;">
+						<image  class="img" src="https://api.guaqi.vip/home/Common/images/368.png" style="width:88%;height:5px;margin:5px 24px;"></image>
+					</view>
+				
+					
+					
+				</view>
+				<scroll-view scroll-y="true" style="height: 3700rpx;background-color:rgba(0,0,0,0.4)"  class="modal-box" hidden="{{flag}}" >
+				
+					<view class="modal-content" >
+						<view class='search' >
+							<input type='text' placeholder='请输入手机号绑定' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
+							
+							<image  src='https://api.guaqi.vip/home/Common/images/sou.png'  bindtap='query' style="margin-top: -10%;"></image>
+							
+						</view>
+						
+					</view>
+					<view >
+						<image  src='https://api.guaqi.vip/home/Common/images/XX.png'  style="width:72rpx;height:72rpx;margin: 7% 45%;"  bindtap="hide" ></image>
+					</view>
+						<view style="float:left;margin-top: -87%;margin-left: 17%;font-size: 29rpx;width:100%;height:18%">
+						 <scroll-view scroll-y="false" style="height:50%" hidden="{{dataw}}">
+						 
+							<view   wx:for="{{searchData}}" wx:for-item="value"  style="display:flex">	
+								<view style="width:80%;margin-top: 2%;font-size:32rpx;display:flex">
+									<text>{{value.student_name}}</text>
+									<text style="margin-left:5%">{{phone.toHide(value.number)}}</text>
+														
+								</view>
+								<view  wx:if="{{send}}" class="bangd"  bindtap="binding" data-number="{{value.number}}" data-name="{{value.student_name}}" >	
+									绑定	
+								</view>
+								<view  wx:else  class="bangds"  >	
+									绑定	
+								</view>
+								
+							</view>
+							<view style="position: absolute;margin-top: 3%;margin-left: -1%;font-size: 22rpx;color:＃848484" hidden="{{dataw}}"> 
+									【点击"绑定" 获取验证码】
+							</view>
+						 </scroll-view>
+							<view class='changeInfoName' hidden="{{fals}}">
+								 <input placeholder='请输验证码' value="{{codevalue}}" bindinput='codevalue' style='padding-left: 6%;width:70%;background-color:#F9F3EF;color:#b7b7b7'/> 
+								 <button class='codeBtn' >{{countDownSecond+"s"}}</button>
+							</view>
+							<view  wx:if="{{!send}}"  hidden="{{fals}}">
+                                <button style="width:63%;margin-left: 0%;background-color:#FF8A1D;border-radius:50rpx;color: #fff;height:64rpx;line-height: 66rpx;"  bindtap="Code" data-number="{{number}}">提交</button>   
+							</view>
+							<view wx:else hidden="{{fals}}">
+                                <button style="width:63%;margin-left: 0%;background-color:#848484;border-radius:50rpx;color: #fff;height:64rpx;line-height: 66rpx;"   >提交</button>   
+							</view>
+					    </view>
+						
+				</scroll-view>
+		 </view>
+		 <!-- 使用wxs 手机号码中间四位显示为*号 -->
+		<wxs module="phone">
+		var toHide = function(array) {
+		  var mphone = array.substring(0, 3) + '****' + array.substring(7);
+		  return mphone;
+		}
+		module.exports.toHide = toHide;
+		</wxs>
+
+		
+	 
+
+

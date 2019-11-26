@@ -1,0 +1,41 @@
+/* pages/new/new.wxss */
+.title {
+	
+	text-align: center;
+	font-size:45rpx;
+   
+}
+.titles{
+	margin: 10% 4%;
+	text-align: center;
+	font-size:45rpx;
+}
+.time{
+	text-align: center;
+	margin:47rpx 0;
+    font-size:25rpx;
+}
+.conter view{
+		   text-indent:2em;
+		   margin:20rpx 20rpx;
+       font-size:30rpx;
+
+	}
+.imagesize{
+	display:flex;               
+    justify-content: center;
+}
+.imagesize image{
+	 
+    width:700rpx;
+    height:560rpx;
+	margin:0 20rpx;
+
+
+}	
+  .title{
+   margin:22rpx 20rpx;
+   font-size: 22px;
+
+   
+ }

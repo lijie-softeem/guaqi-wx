@@ -1,0 +1,70 @@
+<!--pages/campus/campus.wxml-->
+	<component-topnav   titleText="{{swiper.titleText}}" isShowBackcolor="{{swiper.isShowBackcolor}}" backIcon="{{swiper.backIcon}}"></component-topnav>
+
+		<view style="height:100%;" >
+			 <swiper class='u-wrp-bnr' indicator-dots="true" style="border-radius:10px; height:850rpx;" autoplay='true' interval='5000' duration='1000' circular='true'  current="{{swiper.current}}">  <!-- indicator-dots='true' -->
+				<block wx:for="{{swiper.bnrUrl}}" wx:for-index="index">
+					<swiper-item > 
+						<view>
+							<image src='{{item.url}}' class='u-img-slide'  ></image>
+							<view class="fuu" >
+								<view class="fuu-a" >
+									<view class="fuu-b">
+										<text style="font-size:40rpx;font-weight:bold;">{{item.name}}</text>
+										<text style="font-size:32rpx;margin-left:10px;font-weight:bold;">{{item.content}}</text>
+										<a bindtap="{{item.addmap}}"><text style="background: linear-gradient(to right, rgba(255,152,21,17), rgba(255,155,91,17));color:#fff;padding: 2% 5%;border-radius:50rpx;margin-left: 26%;font-size:30rpx;">点击导航</text></a>
+									</view>
+								</view>
+								
+							</view>
+							<view style="margin: 15% 10% 0 10%;display:flex" >
+								<view style="margin-right: 6%;" >
+									<image mode="" src="img/add.png" style="width:36rpx; height:49rpx;"></image>
+								</view>
+								<view style="font-size:26rpx">
+									{{item.add}}
+								</view>
+							</view>
+							<view class="map-a">
+								<map id="map" longitude="{{item.longitude}}" latitude="{{item.latitude}}" scale="14"  markers="{{item.markers}}" show-location style="width:85%; height: 163rpx;border-radius:10px;"></map>
+								
+							</view>
+							<view style="margin: 3% 0 4% 7%;font-size:26rpx">
+								<text>联系电话：{{item.ipone}}</text>
+							</view>
+							
+								
+						</view>
+						 
+
+						 
+					</swiper-item>
+				  </block>
+
+			 </swiper>
+	                 <image class='prev arrow' bindtap='prevImg' src="img/preImg.png"/>
+    				  <image class='next arrow' bindtap='nextImg' src="img/nexImg.png"/>
+			<view class="divLine1"></view> 
+			<view style=" position: absolute;margin-left: 83%;margin-top: -7%;" >
+				<image mode="" src="img/cai.png" style="width:62rpx; height:31rpx;"></image>
+			</view>
+
+		<view class="text" style="margin:5% 7% 0 7%;">
+			<p>
+				呱奇编程教育源自瑞士，是一家专注4-16岁少儿编程教育的机构。中心立足武汉，辐射全国，引入先进的教育理念及授课方式，整合瑞士洛桑联邦理工学院Aiexperts工作室顶级人工智能专家的AI前端科技、武汉软帝集团12 年的互联网教育经验、武汉诺得佳科技人工智能商业场景应用技术和百余名IT 精英教研团队优势，将少儿编程课程与语数外学科相结合，历经数年时间，研发出以智能机器人、少儿学科编程、少儿人工智能、全国青少年信息学奥林匹克竞赛等系列化课程体系为核心，针对中国少儿的STEAM 创客教育体系。
+			</p>
+			
+		</view>
+		<view class="text" style="margin:0 7% 0 7%;">
+			<p>
+				呱奇编程经过2018年的良性发展，于2018年年底获得A轮1000万融资，目前开设的校区有体验城校区、武昌中北路校区、汉口凯德西城校区，将在2019年在武汉全面布局，计划在2019年新开5家新校区。
+			</p>
+			
+		</view>
+		<!-- <view class="divLine1"></view>  -->
+		<view style="height:50px">
+		</view>
+		<!--<view>
+          <image class="add_icon" src="img/left.gif"></image>
+         </view>-->
+	</view>

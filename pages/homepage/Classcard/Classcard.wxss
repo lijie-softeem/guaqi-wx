@@ -1,0 +1,89 @@
+/* pages/homepage/classcard.wxss */
+
+
+.tex_a{
+	margin-left: 6%;
+	color: #fff;
+	font-size: 44rpx;
+ 
+}
+.tex_b{
+	margin-left: 6%;
+	color: #fff;
+	font-size: 24rpx;
+	margin-top: 2%;
+
+}
+.becolor{
+	border-radius: 20rpx;
+	background-color: #fff;
+	height: 2000rpx;
+	margin-top: -76%;
+
+}
+.deer{
+	box-shadow: 0px 0px 10px -3px #898989;
+	background-color: #fff;
+	border-radius: 26rpx;
+	height: 206rpx;
+	width: 672rpx;
+	margin: 0 5%;
+	margin-top: -15%;
+	position: absolute;
+
+}
+.deer_a{
+	margin-top: 3%;
+	margin-left: 6%;
+    font-weight:bold;
+	font-size:35rpx;
+}
+.deer_b view{
+	
+	margin-top: 3%;
+	margin-left: 6%;
+
+
+}
+.deer_b image{
+	width: 84rpx;
+	height: 84rpx;
+	border-radius:50rpx;
+}
+.hor{
+	display: flex;flex-direction: row; width: 100%;
+}
+.onwday{
+	background-color: #fff;
+	box-shadow: 0px 0px 10px -3px #898989;
+	border-radius: 26rpx;
+	width: 672rpx;
+	height: 274rpx;
+	margin: 6% 5% -2% 5%;
+	display: flex;
+
+}
+.time_a{
+	padding-top: 3%;
+	padding-left: 9%;
+
+}
+.time_aa{
+	
+}
+.time_text button{
+	
+	width: 160rpx;
+	height: 54rpx;
+	border-radius: 50rpx;
+	font-size: 24rpx;
+	line-height: 52rpx;
+	color: #fff;
+	margin-left: -83%;
+    margin-top: 22%;
+    position: absolute;
+}
+#img_a{
+	width:158rpx;height:158rpx;margin-top: 11%;margin-left:40%;
+
+}

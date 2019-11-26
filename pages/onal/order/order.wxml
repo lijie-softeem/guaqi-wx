@@ -1,0 +1,142 @@
+<!--pages/own/order/order.wxml-->
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+<view class="swiper-tab">
+  <block wx:for="{{swipertab}}" wx:key="sptab">
+    <view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" style="font-size: 28rpx;" bindtap="tabSwitch">{{item.name}}</view>
+  </block>
+</view>
+ 
+<swiper current="{{currtab}}" class="swiper-box" duration="300"  style="height:{{deviceH-31}}px" bindchange="tabChange">
+  <!-- 待付款 -->
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true" style="height:100%" >
+	<view class="mml" wx:for="{{course}}" wx:for-index="key"  wx:for-item="value"  >
+		 <view class="urlb"  style="background-image:url('https://api.guaqi.vip/home/Common/images/hj.png');" catchtap="detali_yy" data-id="{{value.id}}">
+			 <view class="diy-culum" >
+				<view class="data-well">
+					<view class=" immga" >
+						<view style="position: absolute;border-radius:20rpx;box-shadow: 0px 0px 10px -3px #898989;width:145rpx;height:195rpx">
+							
+						</view>	
+						<view style="position: absolute;">
+							<image  src="{{value.course_img}}" style="border-radius:10rpx;margin-left:4%;width:136rpx;height:195rpx;"></image>
+						</view>	
+					</view>
+					<!-- <view class="f-29  dzf" >待预约</view> -->
+					<view class="nr">
+						 <view class="f-29" style="font-size:34rpx;font-weight: bold; ">{{value.course_name}}</view>
+						 <view style="font-size:22rpx;color:#949494;width:85%; padding-top:10rpx;" ><text>{{value.course_des}}</text></view>
+					</view>
+				</view>		
+			 </view>
+				<view class="data-well"  >
+					<view  class="kcc" >
+						<view style="display:flex">
+							<view style="font-size:24rpx">课程金额</view>
+							<view style="position: absolute;margin-left: 450%;font-size:24rpx">￥{{value.cost}}\n</view>
+						</view>
+						
+						<view style="display:flex;margin-top: 12%;">
+							<view style="font-size:24rpx">实际金额</view>
+							<view style="position: absolute;margin-left: 450%;font-size:24rpx">￥{{value.cost}}\n</view>
+						</view>
+					</view>
+					 <view class="f-29" style="position: absolute;margin-left:68%;margin-top: 57%;font-size:27.8rpx;color:#c71000 ">待预约</view>
+				</view>		
+				
+		
+			</view>
+		</view>
+		<view wx:if="{{ type == 2 }}"> 
+					<view class="imgs"><image src="https://api.guaqi.vip/home/Common/images/soul.png" ></image></view>
+					<view class="sol">暂无数据</view>
+		</view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 已完成 -->
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true" style="height:100%" >
+        <view style="display:flex; justify-content:center; align-items:center;" wx:for="{{sign_up}}" wx:for-index="key"  wx:for-item="value">
+		 <view  style="background-image:url('https://api.guaqi.vip/home/Common/images/hj.png');background-size:100%;width: 699rpx;height: 548rpx;margin-top: 14px;" >
+				 <view class="diy-culum" >
+					<view class="data-well">
+						<view class=" immga" >
+							<view src="{{value.course_img}}" style="position: absolute;box-shadow: 0px 0px 10px -3px #898989;border-radius:10px;">
+							</view>
+							<view style="position: absolute;">
+								<image  src="{{value.course_img}}" style="border-radius:10rpx;margin-left:4%;width:136rpx;height:195rpx;"></image>
+							</view>	
+						</view>
+						<!-- <view class="f-29  dzf" >已报名</view> -->
+						<view class="nr">
+							 <view class="f-29" style="font-size:34rpx;font-weight: bold; ">{{value.course_name}}</view>
+							 <view style="font-size:22rpx;color:#949494;width:85%; padding-top:10rpx;" ><text>{{value.course_des}}</text></view>
+						</view>
+					</view>		
+				 </view>
+
+				<view class="data-well"  >
+                    <view  class="kcc" >
+                        <view style="display:flex">
+                            <view style="font-size:24rpx">课程金额</view>
+                            <view style="position: absolute;margin-left: 450%;font-size:24rpx">￥{{value.cost}}\n</view>
+                        </view>
+
+                        <view style="display:flex;margin-top: 12%;">
+                            <view style="font-size:24rpx">实际金额</view>
+                            <view style="position: absolute;margin-left: 450%;font-size:24rpx">￥{{value.cost}}\n</view>
+                        </view>
+                    </view>
+                     <view class="f-29" style="position: absolute;margin-left:68%;margin-top: 57%;font-size:27.8rpx;color:#c71000 ">已报名</view>
+                </view>
+			</view>
+		</view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 取消 -->
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true"  style="height:100%" >
+        <view style="display:flex; justify-content:center; align-items:center;" wx:for="{{no_course}}" wx:for-index="key"  wx:for-item="value">
+		 <view  style="background-image:url('https://api.guaqi.vip/home/Common/images/hj.png');background-size:100%;width: 699rpx;height: 548rpx;margin-top: 14px;" catchtap="detali_qx" data-id="{{value.id}}">
+			 <view class="diy-culum" >
+				<view class="data-well">
+					<view class=" immga" >
+						<view style="position: absolute;box-shadow: 0px 0px 10px -3px #898989;border-radius:10px;">
+							<image  src="{{value.course_img}}"  style="border-radius:10px;margin-left: 3px;width:145rpx;height:195rpx"></image>
+						</view>	
+						<view style="position: absolute;">
+							<image  src="{{value.course_img}}" style="border-radius:10px;margin-left:7%;width:138rpx;height:195rpx;"></image>
+						</view>	
+					</view>
+					<!-- <view class="f-29  dzf" >待预约</view> -->
+					<view class="nr">
+						 <view class="f-29" style="font-size:34rpx;font-weight: bold; ">{{value.course_name}}</view>
+						 <view style="font-size:22rpx;color:#949494;width:85%; padding-top:10rpx;" ><text>{{value.course_des}}</text></view>
+					</view>
+				</view>		
+			 </view>
+				
+				<view class="data-well"  >
+                    <view  class="kcc" >
+                        <view style="display:flex">
+                            <view style="font-size:24rpx">课程金额</view>
+                            <view style="position: absolute;margin-left: 450%;font-size:24rpx">￥{{value.cost}}\n</view>
+                        </view>
+
+                        <view style="display:flex;margin-top: 12%;">
+                            <view style="font-size:24rpx">实际金额</view>
+                            <view style="position: absolute;margin-left: 450%;font-size:24rpx">￥{{value.cost}}\n</view>
+                        </view>
+                    </view>
+                     <view class="f-29" style="position: absolute;margin-left:68%;margin-top: 57%;font-size:27.8rpx;color:#c71000 ">已取消</view>
+                </view>
+			</view>
+		</view>
+		<view wx:if="{{ type == 2 }}"> 
+					<view class="imgs"><image src="https://api.guaqi.vip/home/Common/images/soul.png" ></image></view>
+					<view class="sol">暂无数据</view>
+		</view>
+    </scroll-view>
+  </swiper-item>
+ 
+</swiper>

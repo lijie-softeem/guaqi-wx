@@ -1,0 +1,61 @@
+<!--pages/collection/collection.wxml-->
+<component-topnav   titleText="{{titleText}}" isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>  
+
+<view class="" style="background-image:url('https://api.guaqi.vip/home/Common/images/sc_nj.png');background-size:100% 100%; height:130rpx;"></view>	
+	<view class="main" >	
+		<view class="diy-culum">
+				<view  wx:if="{{type == 1}}" >
+					<view  wx:for="{{course}}"   wx:for-item="value">
+							<view class="data-well" wx:if="{{value.collection == 1}}">
+									<view class="kc" >
+										<view class="imm" style="">
+											<image   style="border-radius:10px;width:206rpx;height:268rpx;box-shadow: 0px 0px 10px -3px #898989;"></image>
+										</view>	
+										<view class="imms" >
+											<image  src="https://api.guaqi.vip/home/Common/images/pan.png " style="border-radius:10px;margin-left: 3%;width:194rpx;height:268rpx"></image>	
+										</view>			
+									</view>
+								
+									<view class="nr" >
+										  <view class="sy" >适于{{value.age_group}}岁\n</view>
+										  <view class="f-29 van_icon"  style="font-size:32rpx">
+											{{value.course_name}}
+										  </view>
+										  <view class="con" >
+											<text>{{value.course_des}}</text>
+										  </view>
+										  <view>
+											 <view  class="buut" >
+												<view style="width:45%;">
+													<text style="color:red;font-size:22rpx;">{{value.count}}</text> <text style="color:#949494;font-size:18rpx;">人已学习</text>
+												</view>
+
+													<view wx:if="{{ value.collection ==1}}">
+														<image  catchtap="collection" data-id="{{value.id}}" id="{{key}}"  data-collection="2" src=" img/xinh.png" style="width:28rpx;height:28rpx;"></image>
+													 </view>
+													<view wx:elif="{{ value.collection == 2}}">
+														<image  catchtap="collection" data-id="{{value.id}}" id="{{key}}"  data-collection="1" src="img/x.png" style="width:28rpx;height:28rpx;"></image>
+													</view>
+
+												<view class="te f-29">
+														<a catchtap="detali" data-id="{{value.id}}"> <text  style="width:100%">查看详情</text></a>
+												</view>
+											 </view>
+										  </view>
+
+									</view>
+							</view>	
+						
+					</view>	
+				</view>	
+			<view wx:if="{{ type == 2 }}"> 
+					<view class="imgs"><image src="img/soul.png" ></image></view>
+					<view class="sol">暂无收藏</view>
+			</view>
+			
+		</view>
+	
+			
+		</view>
+			
+	

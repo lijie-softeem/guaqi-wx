@@ -1,0 +1,61 @@
+<component-topnav   titleText="{{titleText}}"  titleClass="{{titleClass}} "isShowBackcolor="{{isShowBackcolor}}" backIcon="{{backIcon}}"></component-topnav>
+
+  <view style="width:100%;min-height:100%;background-image:url('https://api.guaqi.vip/home/Common/images/classcard.png');background-size:100% 100%;height:859rpx; background-size: cover; background-size: contain;background-position:center center;">
+    <view class="tex_a" style="padding-top: 2%;">
+		<text>课程表</text>
+	</view>
+    <view class="tex_b">
+		<text>小朋友们要按时上课哦！</text>
+    </view>
+	
+  
+  </view>
+  <view  class="becolor"   >
+		<view class="deer">
+			 <view class="deer_a">
+				<text>亲爱的老师们</text>
+			 </view>
+			 <scroll-view scroll-x >
+				 <view class="deer_b hor" >
+						 <view wx:for="{{stu_img}}" wx:for-index="key"  wx:for-item="stu_data"> <image src="{{stu_data.user_image}}"></image></view>
+				 </view>
+			  </scroll-view>
+		</view>
+		<view style="height:88rpx">
+		</view>
+		<view wx:if="{{datalist !=1 }}" style="margin-bottom:72rpx;">
+			<view class="onwday" wx:for="{{datalist}}" wx:for-index="key"  wx:for-item="value">
+					<view style="position: absolute;width: 65%;margin-top: 3%">
+						<view class="time_a">
+						    <view wx:if="{{value.week_time == nowDate }}">
+						   <text style="font-size:40rpx;color:#4D37B2">今日</text> <text style="font-size:30rpx;color:#4D37B2;margin-left:3%">{{value.grade_group}}</text>
+						    </view>
+						    <view wx:else>
+						    <text style="font-size:40rpx;color:#000"> {{ value.grade_month_time }}</text> <text style="font-size:30rpx;color:#777777;margin-left:3%">{{value.grade_group}}</text>
+						    </view>
+						</view>
+						<view class="time_a" style="padding-bottom: 1%;font-size:28rpx">
+							<!-- {{datas.course_name}}123 -->
+						</view>
+						</view>
+                             <!--  <view style="font-size:28rpx;margin-left:65%;margin-top: 16%;width: 100%;">
+                                班级：{{value.grades_name}}
+                              </view> -->
+                             <view style="font-size:28rpx;margin-left: 7%;margin-top: 17%;width: 100%; color:#171715;">
+                                课程：{{value.coures_name}}
+                             </view>
+
+						<view class="time_a time_text" >
+						   <button style="background:{{value.week_time == nowDate ? 'linear-gradient(to right, rgba(77,55,178,17), rgba(77,55,170,17))' : 'rgba(77,55,178,17)' }} ;">{{ value.week_time == nowDate ? "今日上课":"待上课"}}</button>
+						 </view>
+					<view style="position: absolute;margin-top: 5%;margin-left: 55%;">
+						 <image src="img/qiu.png" id="img_a"></image> 
+					</view>
+			</view>
+		</view>
+		<view wx:else>
+					<view><image src="img/soul.png" style="width: 200rpx;height: 190rpx;margin: 60rpx auto 20rpx; display:block;"></image></view>
+					<view class="sol" style="width:100%; text-align:center">暂未分班</view>
+		</view>
+		
+  </view>
